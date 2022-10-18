@@ -6,9 +6,12 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  //React.StrictMode가 있으면 console.log에 두번씩 출력된다
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>
+
+  <App />
 );
 
 reportWebVitals();
