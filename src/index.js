@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import HookIndex from './pages/HookIndex';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -11,7 +12,8 @@ root.render(
   //   <App />
   // </React.StrictMode>
 
-  <App />
+  // <App />
+  <HookIndex />
 );
 
 reportWebVitals();
