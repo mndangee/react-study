@@ -71,7 +71,9 @@ const HookIndex = () => {
           paddingBottom: '30px',
         }}
       >
-        <h3 style={{ marginBottom: '20px' }}>Average : useMemo</h3>
+        <h3 style={{ marginBottom: '20px' }}>
+          Average : useMemo , useCallback
+        </h3>
         <Average />
       </div>
     </>
