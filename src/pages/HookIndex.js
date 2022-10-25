@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Average from '../component/hooks/Average';
 import Counter from '../component/hooks/Counter';
 import Info from '../component/hooks/Info';
 import ReducerCounter from '../component/hooks/ReducerCounter';
@@ -61,6 +62,17 @@ const HookIndex = () => {
       >
         <h3 style={{ marginBottom: '20px' }}>Info : useReducer</h3>
         <ReducerInfo />
+      </div>
+
+      <div
+        style={{
+          borderBottom: '1px solid #000',
+          marginBottom: '30px',
+          paddingBottom: '30px',
+        }}
+      >
+        <h3 style={{ marginBottom: '20px' }}>Average : useMemo</h3>
+        <Average />
       </div>
     </>
   );
