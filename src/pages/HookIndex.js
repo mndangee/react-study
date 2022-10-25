@@ -4,6 +4,7 @@ import Counter from '../component/hooks/Counter';
 import Info from '../component/hooks/Info';
 import ReducerCounter from '../component/hooks/ReducerCounter';
 import ReducerInfo from '../component/hooks/ReducerInfo';
+import RefSample from '../component/hooks/RefSample';
 
 const HookIndex = () => {
   const [visible, setVisible] = useState(false); // info 컴포넌트의 가시성을 바꿈
@@ -72,9 +73,20 @@ const HookIndex = () => {
         }}
       >
         <h3 style={{ marginBottom: '20px' }}>
-          Average : useMemo , useCallback
+          Average : useMemo , useCallback , useRef
         </h3>
         <Average />
+      </div>
+
+      <div
+        style={{
+          borderBottom: '1px solid #000',
+          marginBottom: '30px',
+          paddingBottom: '30px',
+        }}
+      >
+        <h3 style={{ marginBottom: '20px' }}>RefSample : useRef</h3>
+        <RefSample />
       </div>
     </>
   );

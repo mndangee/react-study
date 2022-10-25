@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useCallback } from 'react';
+import React, { useMemo, useState, useCallback, useRef } from 'react';
 
 const getAverage = number => {
   console.log('평균값 계산 중...');
@@ -11,6 +11,7 @@ const getAverage = number => {
 const Average = () => {
   const [list, setList] = useState([]);
   const [number, setNumber] = useState('');
+  const inputEl = useRef(null);
 
   // const onChange = e => {
   //   setNumber(e.target.value);
@@ -30,13 +31,14 @@ const Average = () => {
     const nextList = list.concat(parseInt(number));
     setList(nextList);
     setNumber('');
+    inputEl.current.focus(); // 등록 버튼 클릭 시 input에 포커스 맞춰짐
   }, [number, list]); // number 혹인 list가 바뀌었을때만 함수 생성
 
   const avg = useMemo(() => getAverage(list), [list]); // 인풋 내용이 수정될 때도 getAverage 함수가 호출 되기 때문에 작성
 
   return (
     <div>
-      <input value={number} onChange={onChange} />
+      <input value={number} onChange={onChange} ref={inputEl} />
       <button onClick={onInsert}>등록</button>
       <ul>
         {list.map((value, index) => (
