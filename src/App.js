@@ -21,7 +21,7 @@
 // export default App;
 
 import React, { Component } from 'react';
-import LifeCycleSample from './LifeCycleSample';
+import LifeCycleSample from './component/LifeCycle/LifeCycleSample';
 // import ScrollBox from './ScrollBox';
 // import ValidationSample from './ValidationSample';
 
