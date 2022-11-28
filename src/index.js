@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import HookIndex from './pages/HookIndex';
+// import App from './App';
+// import HookIndex from './pages/HookIndex';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import RouterIndex from './pages/RouterIndex';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +15,10 @@ root.render(
   // </React.StrictMode>
 
   // <App />
-  <HookIndex />
+  // <HookIndex />
+  <BrowserRouter>
+    <RouterIndex />
+  </BrowserRouter>
 );
 
 reportWebVitals();
