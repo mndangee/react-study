@@ -6,8 +6,8 @@ const RouterIndex = () => {
   //React Router ~ v5
   // return (
   //   <div>
-  //     <Route path='/' component={Home} exact=[true} />
-  //     <Route path='/about' component={About} />
+  //     <Route path='/' component={Home} exact={true} />
+  //     <Route path={['/about','info']} component={About} />
   //   </div>
   // );
 
@@ -22,9 +22,12 @@ const RouterIndex = () => {
           <Link to='/about'>소개</Link>
         </li>
       </ul>
+      <hr />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
+        {['/about', '/info'].map(path => (
+          <Route key={path} path={path} element={<About />} />
+        ))}
       </Routes>
     </div>
   );
