@@ -22,7 +22,7 @@ const About = () => {
       <p>
         이 프로젝트는 리액트 라우터 기초를 실습해 보는 예제 프로젝트 입니다.
       </p>
-      <p>쿼리 스트링 : {location.search}</p>
+      <p>쿼리 스트링 : {location?.search}</p>
       <p>detail : {detail}</p>
       <p>mode : {mode}</p>
       <button onClick={onToggleDetail}>onToggleDetail</button>
