@@ -1,12 +1,16 @@
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import About from '../component/RouterTutorial/About';
 import Home from '../component/RouterTutorial/Home';
 import Profiles from '../component/RouterTutorial/Profiles';
+import Articles from './Articles';
+import Nav from '../component/RouterTutorial/Nav';
+import Article from '../component/RouterTutorial/Article';
 
 const RouterIndex = () => {
   //React Router ~ v5
   // return (
   //   <div>
+  //     <Nav />
   //     <Route path='/' component={Home} exact={true} />
   //     <Route path={['/about','info']} component={About} />
   //     <Route path="/profiles" component={Profiles} />
@@ -14,20 +18,10 @@ const RouterIndex = () => {
   // );
 
   //React Router v6
+
   return (
     <div style={{ padding: '0px 15px' }}>
-      <ul style={{ marginLeft: '-15px' }}>
-        <li>
-          <Link to='/'>홈</Link>
-        </li>
-        <li>
-          <Link to='/about?detail=true&mode=1'>소개</Link>
-        </li>
-        <li>
-          <Link to='/profiles'>프로필</Link>
-        </li>
-      </ul>
-      <hr />
+      <Nav />
       <Routes>
         <Route path='/' element={<Home />} />
         {['/about', '/info'].map(path => (
@@ -35,6 +29,10 @@ const RouterIndex = () => {
         ))}
         {/* 서브 라우트 */}
         <Route path='/profiles/*' element={<Profiles />} />
+        {/* 중첩된 라우트 */}
+        <Route path='/articles/*' element={<Articles />}>
+          <Route path=':id' element={<Article />} />
+        </Route>
       </Routes>
     </div>
   );
